@@ -3,11 +3,12 @@ import {Button} from "react-bootstrap";
 import React from 'react';
 
 // Firebase
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
 
 function App() {
 
+    /*
     const firebaseConfig = {
         apiKey: "AIzaSyCY2bT9V6C8W9FuooaX9Mty1ZnbxvgdcKw",
         authDomain: "iambored-3bb4f.firebaseapp.com",
@@ -17,9 +18,10 @@ function App() {
         appId: "1:159778339497:web:aba580020f2eba22bb07b8",
         measurementId: "G-HD788608P9"
     };
+    */
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+    // const app = initializeApp(firebaseConfig);
     // const analytics = getAnalytics(app);
 
     return (
