@@ -1,43 +1,44 @@
-import './App.css';
-import {Button} from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
+// import {useState} from 'react';
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route
+} from "react-router-dom";
 
-// Firebase
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
+// Own Components
+import Signup from "./components/Signup";
+import {AuthProvider} from "./contexts/AuthContext";
 
 function App() {
 
-    /*
-    const firebaseConfig = {
-        apiKey: "AIzaSyCY2bT9V6C8W9FuooaX9Mty1ZnbxvgdcKw",
-        authDomain: "iambored-3bb4f.firebaseapp.com",
-        projectId: "iambored-3bb4f",
-        storageBucket: "iambored-3bb4f.appspot.com",
-        messagingSenderId: "159778339497",
-        appId: "1:159778339497:web:aba580020f2eba22bb07b8",
-        measurementId: "G-HD788608P9"
-    };
-    */
-
-    // Initialize Firebase
-    // const app = initializeApp(firebaseConfig);
-    // const analytics = getAnalytics(app);
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('')
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <Button size={"lg"} variant="primary">I am bored (Beta)</Button>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <AuthProvider>
+            <Router>
+                <div className="App">
+                    <h1 className="text-center">I am bored</h1>
+                    <Routes>
+                        <Route path='/' element={
+                            <Container
+                                className="d-flex align-items justify-content-center"
+                                style={{minHeight: "100vh"}}
+                            >
+                                <div className="w-100" style={{maxWidth: "400px"}}>
+                                    <Signup/>
+                                </div>
+                            </Container>
+                        }/>
+                        <Route path='/app' element={
+                            <Button size={"lg"} variant="primary" disabled={true}>I am bored</Button>
+                        }/>
+                    </Routes>
+                </div>
+            </Router>
+        </AuthProvider>
     );
 }
 
