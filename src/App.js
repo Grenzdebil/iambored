@@ -27,7 +27,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Button size={"lg"} variant="primary">I am bored</Button>
+                <Button size={"lg"} variant="primary">I am bored (Beta)</Button>
                 <a
                     className="App-link"
                     href="https://reactjs.org"
